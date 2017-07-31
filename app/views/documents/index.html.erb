@@ -1,0 +1,49 @@
+
+
+<h1>Documents</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Service</th>
+      <th>Stamp required</th>
+      <th>Default price</th>
+      <th>Tat</th>
+      <th>Automated</th>
+      <th>Template url</th>
+      <th>Status</th>
+      <th>Description</th>
+      <th>Priorty</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @documents.each do |document| %>
+      <tr>
+        <td><%= document.name %></td>
+        <td><%= document.service %></td>
+        <td><%= document.stamp_required %></td>
+        <td><%= document.default_price %></td>
+        <td><%= document.tat %></td>
+        <td><%= document.automated %></td>
+        <td><%= document.template_url %></td>
+        <td><%= document.status %></td>
+        <td><%= document.description %></td>
+        <td><%= document.priorty %></td>
+        <td><%= document.user_id %></td>
+        <td><%= link_to 'Show', document %></td>
+        <td><%= link_to 'Edit', edit_document_path(document) %></td>
+        <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Document', new_document_path %>
+<%= link_to 'Search', search_path %>
+<%= link_to 'Users', users_path %>

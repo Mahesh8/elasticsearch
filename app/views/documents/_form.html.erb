@@ -1,0 +1,68 @@
+<%= form_for(document) do |f| %>
+  <% if document.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(document.errors.count, "error") %> prohibited this document from being saved:</h2>
+
+      <ul>
+      <% document.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :service %>
+    <%= f.text_field :service %>
+  </div>
+
+  <div class="field">
+    <%= f.label :stamp_required %>
+    <%= f.check_box :stamp_required %>
+  </div>
+
+  <div class="field">
+    <%= f.label :default_price %>
+    <%= f.text_field :default_price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tat %>
+    <%= f.text_field :tat %>
+  </div>
+
+  <div class="field">
+    <%= f.label :automated %>
+    <%= f.check_box :automated %>
+  </div>
+
+  <div class="field">
+    <%= f.label :template_url %>
+    <%= f.text_field :template_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :priorty %>
+    <%= f.text_field :priorty %>
+  </div>
+
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

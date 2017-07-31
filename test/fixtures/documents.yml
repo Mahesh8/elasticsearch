@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  service_id: 1
+  stamp_required: false
+  deafult_price: MyString
+  tat: MyString
+  automated: false
+  template_url: MyString
+  status_id: 1
+  description: 1
+  priorty: MyString
+  user_id: 1
+
+two:
+  name: MyString
+  service_id: 1
+  stamp_required: false
+  deafult_price: MyString
+  tat: MyString
+  automated: false
+  template_url: MyString
+  status_id: 1
+  description: 1
+  priorty: MyString
+  user_id: 1

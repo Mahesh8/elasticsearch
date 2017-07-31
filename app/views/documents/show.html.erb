@@ -1,0 +1,59 @@
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @document.name %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @document.service %>
+</p>
+
+<p>
+  <strong>Stamp required:</strong>
+  <%= @document.stamp_required %>
+</p>
+
+<p>
+  <strong>Deafult price:</strong>
+  <%= @document.default_price %>
+</p>
+
+<p>
+  <strong>Tat:</strong>
+  <%= @document.tat %>
+</p>
+
+<p>
+  <strong>Automated:</strong>
+  <%= @document.automated %>
+</p>
+
+<p>
+  <strong>Template url:</strong>
+  <%= @document.template_url %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @document.status %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @document.description %>
+</p>
+
+<p>
+  <strong>Priorty:</strong>
+  <%= @document.priorty %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @document.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>
