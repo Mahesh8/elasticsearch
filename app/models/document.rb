@@ -16,18 +16,27 @@ class Document < ApplicationRecord
       __elasticsearch__.search(
         {
           query: {
-            multi_match: {
-              query: query,
-              fields: ['name^10', 'service'],
-              fuzziness: "AUTO"
-            }
-          },
-          highlight: {
-            pre_tags: ['<em>'],
-            post_tags: ['</em>'],
-            fields: {
-              name: {},
-              service: {}
+            function_score: {
+              query: {
+                multi_match: {
+                  query: query,
+                  fields: ['name', 'service'],
+                  fuzziness: "AUTO"
+                }
+              },
+              field_value_factor: {
+                field: 'clicks',                  
+                modifier: 'square',
+                factor: 3
+              }
+              # highlight: {
+              #   pre_tags: ['<em>'],
+              #   post_tags: ['</em>'],
+              #   fields: {
+              #     name: {},
+              #     service: {}
+              #   }
+              # }
             }
           }
         }
@@ -52,8 +61,8 @@ class Document < ApplicationRecord
       }
     } do
       mapping do
-        indexes :name, type: "string", analyzer: "edge_ngram_analyzer"
-        indexes :service, type: "string", analyzer: "edge_ngram_analyzer"
+        indexes :name, type: "string", analyzer: "edge_ngram_analyzer", term_vector: "with_positions"
+        indexes :service, type: "string", analyzer: "edge_ngram_analyzer", term_vector: "with_positions"
       end 
   end
 

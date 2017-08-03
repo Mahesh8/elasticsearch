@@ -11,6 +11,8 @@ class DocumentsController < ApplicationController
   # GET /documents/1.json
   def show
      @document = Document.find(params[:id])
+     count = @document.clicks + 1
+     @document.update_attributes(clicks: count)
   end
 
   # GET /documents/new
