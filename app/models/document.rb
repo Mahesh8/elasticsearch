@@ -26,9 +26,8 @@ class Document < ApplicationRecord
               },
               field_value_factor: {
                 field: 'clicks',                  
-                modifier: 'square',
-                factor: 3
-              }
+                factor: 1
+              },
               # highlight: {
               #   pre_tags: ['<em>'],
               #   post_tags: ['</em>'],
@@ -37,6 +36,7 @@ class Document < ApplicationRecord
               #     service: {}
               #   }
               # }
+              boost_mode: 'replace'
             }
           }
         }
